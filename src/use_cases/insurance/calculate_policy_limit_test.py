@@ -1,11 +1,11 @@
-from src.repositories.in_memory.in_memory_insurance_repository import InMemoryInsuranceRepository
-from src.use_cases.calculate.calculate_premium import CalculatePremiumUseCase
+from src.repositories.insurance.insurance_repository import IInsuranceRepository
+from src.use_cases.insurance.calculate_policy_limit import CalculatePolicyLimitUseCase
 
 
-def test_it_should_be_possible_to_calculate_the_premium() -> None:
+def test_it_should_be_possible_to_calculate_the_policy_limit() -> None:
     """."""
-    insurance_repository = InMemoryInsuranceRepository()
-    sut = CalculatePremiumUseCase(insurance_repository)
+    insurance_repository = IInsuranceRepository()
+    sut = CalculatePolicyLimitUseCase(insurance_repository)
 
     input_data = {
         "car": {
@@ -26,6 +26,6 @@ def test_it_should_be_possible_to_calculate_the_premium() -> None:
         },
     }
 
-    premium = sut.execute(input_data)
+    policy_limit = sut.execute(input_data)
 
-    assert premium == 9050.0
+    assert policy_limit == 90000.0

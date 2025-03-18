@@ -2,10 +2,10 @@ from datetime import datetime
 
 from src.dto.insurance_dto import InsuranceInputDTO
 
-from ..insurance_repository import IInsuranceRepository
+from .insurance_base_repository import IInsuranceBaseRepository
 
 
-class InMemoryInsuranceRepository(IInsuranceRepository):
+class IInsuranceRepository(IInsuranceBaseRepository):
     def calculate_dynamic_rate(self, data: InsuranceInputDTO) -> float:
         """."""
         current_year = datetime.now().year

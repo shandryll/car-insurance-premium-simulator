@@ -1,11 +1,11 @@
-from src.repositories.in_memory.in_memory_insurance_repository import InMemoryInsuranceRepository
-from src.use_cases.calculate.calculate_policy_limit import CalculatePolicyLimitUseCase
+from src.repositories.insurance.insurance_repository import IInsuranceRepository
+from src.use_cases.insurance.calculate_dynamic_rate import CalculateDynamicRateUseCase
 
 
-def test_it_should_be_possible_to_calculate_the_policy_limit() -> None:
+def test_it_should_be_possible_to_calculate_the_dynamic_rate() -> None:
     """."""
-    insurance_repository = InMemoryInsuranceRepository()
-    sut = CalculatePolicyLimitUseCase(insurance_repository)
+    insurance_repository = IInsuranceRepository()
+    sut = CalculateDynamicRateUseCase(insurance_repository)
 
     input_data = {
         "car": {
@@ -26,6 +26,6 @@ def test_it_should_be_possible_to_calculate_the_policy_limit() -> None:
         },
     }
 
-    policy_limit = sut.execute(input_data)
+    dynamic_rate = sut.execute(input_data)
 
-    assert policy_limit == 90000.0
+    assert dynamic_rate == 0.10  # 10%

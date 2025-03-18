@@ -44,7 +44,7 @@ router = APIRouter()
         },
     },
 )
-def health_check() -> dict[str, str]:
+def health_check() -> JSONResponse:
     """Perform a health check of the application and its services."""
     health_status = {
         "status": "healthy",

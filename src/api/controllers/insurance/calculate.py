@@ -1,9 +1,10 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
+from fastapi.responses import JSONResponse
 
 router = APIRouter()
 
 
-@router.get("/v1/calculate")
-def health() -> dict[str, str]:
+@router.post("/v1/calculate")
+def calculate(data: Request) -> JSONResponse:
     """."""
     return {"status": "ok"}

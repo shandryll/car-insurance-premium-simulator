@@ -10,7 +10,7 @@ class InsuranceInputDTO(BaseModel):
     car: ICar = Field(..., description="Details of the car associated with the insurance.")
     deductible_percentage: float = Field(..., ge=0, le=1, description="Percentage of deductible. Must be between 0 and 1.")
     broker_fee: float = Field(..., ge=0, description="Fee charged by the broker. Must be greater than or equal to 0.")
-    registration_location: Optional[IAddress] = Field(..., description="Details of the registration location.")
+    registration_location: Optional[IAddress] = Field(description="Details of the registration location.")
 
 
 class InsuranceOutputDTO(BaseModel):

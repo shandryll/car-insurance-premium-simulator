@@ -25,3 +25,28 @@
             "model": "Corolla",
             "year": 2020,
             "value": 20000.0
+
+
+import pytest
+from httpx import AsyncClient
+from app.main import app
+
+@pytest.mark.asyncio
+async def test_read_root():
+    """
+    Test the root endpoint '/'.
+    """
+    async with AsyncClient(app=app, base_url="http://test") as client:
+        response = await client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Hello, World!"}
+
+@pytest.mark.asyncio
+async def test_read_item():
+    """
+    Test the '/items/{item_id}' endpoint with a valid item_id and query parameter.
+    """
+    async with AsyncClient(app=app, base_url="http://test") as client:
+        response = await client.get("/items/42?q=test_query")
+    assert response.status_code == 200
+    assert response.json() == {"item_id": 42, "q": "test_query"}

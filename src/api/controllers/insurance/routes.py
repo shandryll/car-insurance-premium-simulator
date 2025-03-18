@@ -1,9 +1,13 @@
 from fastapi import APIRouter
 
+from src.dto.insurance_dto import InsuranceInputDTO, InsuranceOutputDTO
+
+from .calculate import calculate_insurance
+
 router = APIRouter()
 
 
-@router.get("/calculate")
-def health() -> dict[str, str]:
+@router.post("/calculate", tags=["Calculate Insurance"], summary="Route to calculates car insurance")
+def execute(data: InsuranceInputDTO) -> InsuranceOutputDTO:
     """."""
-    return {"status": "ok"}
+    return calculate_insurance(data)

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from src.api.controllers.insurance import calculate
+from src.api.controllers.insurance import routes as insurance_routes
 from src.services import health_check
 
 app = FastAPI(
@@ -10,4 +10,4 @@ app = FastAPI(
 )
 
 app.include_router(health_check.router, prefix="/api/v1")
-app.include_router(calculate.router, prefix="/api/v1")
+app.include_router(insurance_routes.router, prefix="/api/v1")

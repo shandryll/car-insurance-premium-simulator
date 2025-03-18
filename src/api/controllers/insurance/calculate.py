@@ -1,15 +1,12 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import HTTPException
 
 from src.dto.insurance_dto import InsuranceInputDTO, InsuranceOutputDTO
 from src.use_cases.factories.make_calculate_dynamic_rate import make_calculate_dynamic_rate_use_case
 from src.use_cases.factories.make_calculate_policy_limit import make_calculate_policy_limit_use_case
 from src.use_cases.factories.make_calculate_premium import make_calculate_premium_use_case
 
-router = APIRouter()
 
-
-@router.post("/calculate", tags=["Calculate Insurance"], summary="Route to calculates car insurance")
-def calculate(data: InsuranceInputDTO) -> InsuranceOutputDTO:
+def calculate_insurance(data: InsuranceInputDTO) -> InsuranceOutputDTO:
     """."""
     try:
         calculate_dynamic_rate_use_case = make_calculate_dynamic_rate_use_case()

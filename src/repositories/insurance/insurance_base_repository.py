@@ -10,7 +10,7 @@ class IInsuranceBaseRepository(ABC):
         pass
 
     @abstractmethod
-    def calculate_premium(self, data: InsuranceInputDTO) -> float:
+    def calculate_premium(self, data: InsuranceInputDTO, applied_rate: float) -> float:
         """."""
         pass
 

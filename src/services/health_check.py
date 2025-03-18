@@ -14,7 +14,6 @@ router = APIRouter()
         such as database connectivity or external services if applicable.
         """
     ),
-    response_description="Detailed application health status.",
     responses={
         200: {
             "description": "Application is healthy",

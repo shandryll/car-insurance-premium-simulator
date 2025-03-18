@@ -55,4 +55,3 @@ If a **registration location** is provided, integrate with a **Geographic Inform
 - `policy_limit` _(Final policy limit after deductible application)_
 - `calculated_premium` _(Final premium after deductible and broker fee adjustments)_
 - `deductible_value` _(Monetary value calculated from the original policy limit and deductible percentage)_
-- 

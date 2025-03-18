@@ -1,0 +1,1 @@
+dockerizar aplicação

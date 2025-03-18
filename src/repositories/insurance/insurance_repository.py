@@ -35,7 +35,7 @@ class IInsuranceRepository(IInsuranceBaseRepository):
 
         return premium
 
-    def calculate_policy_limit(self, data: InsuranceInputDTO) -> float:
+    def calculate_policy_limit(self, data: InsuranceInputDTO) -> dict[str, float]:
         """."""
         insurance_input = data.model_dump()
 
@@ -47,4 +47,7 @@ class IInsuranceRepository(IInsuranceBaseRepository):
         deductible_value = base_policy_limit * deductible_percentage
         policy_limit = base_policy_limit - deductible_value
 
-        return policy_limit
+        return {
+            "policy_limit": policy_limit,
+            "deductible_value": deductible_value,
+        }

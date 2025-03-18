@@ -28,6 +28,7 @@ def test_it_should_be_possible_to_calculate_the_policy_limit() -> None:
         registration_location=address_data,
     )
 
-    policy_limit = sut.execute(input_data)
+    policy_calculations = sut.execute(input_data)
 
-    assert policy_limit == 90000.0
+    assert policy_calculations["policy_limit"] == 90000.0
+    assert policy_calculations["deductible_value"] == 10000.0

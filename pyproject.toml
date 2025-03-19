@@ -1,7 +1,7 @@
 [project]
-name = ""
+name = "Car Insurance Premium Simulator"
 version = "1.0.0"
-description = ""
+description = "API to calculate car insurance premiums based on a car's age, value, deductible percentage and a broker's fee"
 dynamic = ["version"]
 requires-python = ">= 3.9"
 
@@ -10,7 +10,7 @@ authors = [
 ]
 
 [project.urls]
-Repository = ""
+Repository = "https://github.com/shandryll/car-insurance-premium-simulator"
 
 [tool.ruff]
 line-length = 150

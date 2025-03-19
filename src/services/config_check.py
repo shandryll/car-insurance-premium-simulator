@@ -51,7 +51,6 @@ router = APIRouter()
             "content": {
                 "application/json": {
                     "example": {
-                        "status_code": 400,
                         "detail": "Validation failed: <errors>",
                     },
                 },
@@ -62,7 +61,6 @@ router = APIRouter()
             "content": {
                 "application/json": {
                     "example": {
-                        "status_code": 500,
                         "detail": "An unexpected error occurred: <error>",
                     },
                 },

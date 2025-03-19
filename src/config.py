@@ -1,5 +1,8 @@
+from fastapi import APIRouter
 from pydantic import Field, ValidationError
 from pydantic_settings import BaseSettings
+
+router = APIRouter()
 
 
 class Settings(BaseSettings):

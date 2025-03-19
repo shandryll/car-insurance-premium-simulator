@@ -49,15 +49,12 @@ docker-compose up -d
 ```
 http://localhost:8000/docs
 ```
-<br>
 
 ---
 
 ## Project Description
 
 As a product owner, I want a backend service that calculates car insurance premiums based on a car's age, value, deductible percentage and a broker's fee. This ensures users receive an accurate and configurable insurance premium calculation. The service must be implemented using **FastAPI**, containerized with **Docker**, and designed following **Domain-Driven Design (DDD), S.O.L.I.D., and Clean Architecture** principles. The domain model should clearly distinguish between **value objects, entities, aggregates, services, and events**.
-
-<br>
 
 ---
 
@@ -110,8 +107,6 @@ If a **registration location** is provided, integrate with a **Geographic Inform
 - `policy_limit` _(Final policy limit after deductible application)_
 - `calculated_premium` _(Final premium after deductible and broker fee adjustments)_
 - `deductible_value` _(Monetary value calculated from the original policy limit and deductible percentage)_
-
-<br>
 
 ---
 

@@ -8,6 +8,6 @@ router = APIRouter()
 
 
 @router.post("/calculate", tags=["Calculate Insurance"], summary="Route to calculates car insurance")
-def execute(data: InsuranceInputDTO) -> InsuranceOutputDTO:
+async def execute(data: InsuranceInputDTO) -> InsuranceOutputDTO:
     """."""
     return calculate_insurance(data)

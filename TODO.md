@@ -1,4 +1,2 @@
-() editar a rota
-() criar testes para a rota
-() criar arquivo de inicialização
+() editar os dados de cada rota
 () dockerizar aplicação

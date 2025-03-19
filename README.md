@@ -43,6 +43,11 @@ docker-compose build
 docker-compose up -d
 ```
 
+### To run the unit tests, run the command below:
+```
+pytest -v -s
+```
+
 ### After running our container, the url below will be available to access the documentation of our routes
 ```
 http://localhost:8000/docs

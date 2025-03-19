@@ -1,8 +1,8 @@
-from src.dto.insurance_dto import InsuranceInputDTO
-from src.models.address import IAddress
-from src.models.car import ICar
-from src.repositories.insurance.insurance_repository import IInsuranceRepository
-from src.use_cases.insurance.calculate_policy_limit import CalculatePolicyLimitUseCase
+from src.application.dto.insurance_dto import InsuranceInputDTO
+from src.application.use_cases.insurance.calculate_policy_limit import CalculatePolicyLimitUseCase
+from src.domain.entities.address import IAddress
+from src.domain.entities.car import ICar
+from src.infrastructure.repositories.insurance_repository import IInsuranceRepository
 
 
 def test_it_should_be_possible_to_calculate_the_policy_limit() -> None:

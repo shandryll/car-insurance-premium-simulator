@@ -1,5 +1,5 @@
-from src.repositories.insurance.insurance_repository import IInsuranceRepository
-from src.use_cases.insurance.calculate_premium import CalculatePremiumUseCase
+from src.application.use_cases.insurance.calculate_premium import CalculatePremiumUseCase
+from src.infrastructure.repositories.insurance_repository import IInsuranceRepository
 
 
 def make_calculate_premium_use_case() -> None:

@@ -1,5 +1,5 @@
-from src.repositories.insurance.insurance_repository import IInsuranceRepository
-from src.use_cases.insurance.calculate_dynamic_rate import CalculateDynamicRateUseCase
+from src.application.use_cases.insurance.calculate_dynamic_rate import CalculateDynamicRateUseCase
+from src.infrastructure.repositories.insurance_repository import IInsuranceRepository
 
 
 def make_calculate_dynamic_rate_use_case() -> None:

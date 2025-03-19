@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from src.dto.insurance_dto import InsuranceInputDTO
+from src.application.dto.insurance_dto import InsuranceInputDTO
 
 
-class IInsuranceBaseRepository(ABC):
+class IInsuranceDomainRepository(ABC):
     @abstractmethod
     def calculate_dynamic_rate(self, data: InsuranceInputDTO) -> float:
         pass

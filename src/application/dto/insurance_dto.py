@@ -2,8 +2,8 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from src.models.address import IAddress
-from src.models.car import ICar
+from src.domain.entities.address import IAddress
+from src.domain.entities.car import ICar
 
 
 class InsuranceInputDTO(BaseModel):

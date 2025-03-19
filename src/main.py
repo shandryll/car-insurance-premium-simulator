@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from src.api.controllers.insurance import routes as insurance_routes
-from src.services import config_check, health_check
+from src.application.services import config_check, health_check
+from src.infrastructure.controllers.insurance import routes as insurance_routes
 
 app = FastAPI(
     title="Car Insurance Premium Simulator",

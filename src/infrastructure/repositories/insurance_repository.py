@@ -1,12 +1,12 @@
 from datetime import datetime
 
-from src.dto.insurance_dto import InsuranceInputDTO
+from src.application.dto.insurance_dto import InsuranceInputDTO
 from src.utils.handler import monetary_handler
 
-from .insurance_base_repository import IInsuranceBaseRepository
+from ...domain.repositories.insurance_repository import IInsuranceDomainRepository
 
 
-class IInsuranceRepository(IInsuranceBaseRepository):
+class IInsuranceRepository(IInsuranceDomainRepository):
     def calculate_dynamic_rate(self, data: InsuranceInputDTO) -> float:
         insurance_input = data.model_dump()
 

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import ValidationError
 
-from src.dto.insurance_dto import InsuranceInputDTO, InsuranceOutputDTO
+from src.application.dto.insurance_dto import InsuranceInputDTO, InsuranceOutputDTO
 
 from .calculate import calculate_insurance
 

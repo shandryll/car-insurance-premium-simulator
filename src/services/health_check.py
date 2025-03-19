@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 
 router = APIRouter()
@@ -44,7 +44,6 @@ router = APIRouter()
     },
 )
 async def health_check() -> JSONResponse:
-    """Perform a health check of the application and its services."""
     health_status = {
         "status": "healthy",
         "details": {
@@ -53,6 +52,6 @@ async def health_check() -> JSONResponse:
     }
 
     if health_status["status"] != "healthy":
-        return JSONResponse(content=health_status, status_code=503)
+        return HTTPException(content=health_status, status_code=503)
 
     return JSONResponse(content=health_status, status_code=200)

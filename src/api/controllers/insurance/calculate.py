@@ -7,7 +7,6 @@ from src.use_cases.factories.make_calculate_premium import make_calculate_premiu
 
 
 def calculate_insurance(data: InsuranceInputDTO) -> InsuranceOutputDTO:
-    """."""
     try:
         calculate_dynamic_rate_use_case = make_calculate_dynamic_rate_use_case()
         calculate_premium_use_case = make_calculate_premium_use_case()

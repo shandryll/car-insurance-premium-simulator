@@ -7,7 +7,6 @@ from .insurance_base_repository import IInsuranceBaseRepository
 
 class IInsuranceRepository(IInsuranceBaseRepository):
     def calculate_dynamic_rate(self, data: InsuranceInputDTO) -> float:
-        """."""
         insurance_input = data.model_dump()
 
         current_year = datetime.now().year
@@ -22,7 +21,6 @@ class IInsuranceRepository(IInsuranceBaseRepository):
         return dynamic_rate
 
     def calculate_premium(self, data: InsuranceInputDTO, applied_rate: float) -> float:
-        """."""
         insurance_input = data.model_dump()
 
         car_value = insurance_input["car"]["value"]
@@ -36,7 +34,6 @@ class IInsuranceRepository(IInsuranceBaseRepository):
         return premium
 
     def calculate_policy_limit(self, data: InsuranceInputDTO) -> dict[str, float]:
-        """."""
         insurance_input = data.model_dump()
 
         car_value = insurance_input["car"]["value"]

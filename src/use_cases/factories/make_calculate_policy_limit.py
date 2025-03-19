@@ -3,7 +3,6 @@ from src.use_cases.insurance.calculate_policy_limit import CalculatePolicyLimitU
 
 
 def make_calculate_policy_limit_use_case() -> None:
-    """."""
     insurance_repository = IInsuranceRepository()
     use_case = CalculatePolicyLimitUseCase(insurance_repository)
 

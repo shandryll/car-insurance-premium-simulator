@@ -10,6 +10,6 @@ app = FastAPI(
 )
 
 
-app.include_router(config_check.router, prefix="/api/v1")
 app.include_router(health_check.router, prefix="/api/v1")
+app.include_router(config_check.router, prefix="/api/v1")
 app.include_router(insurance_routes.router, prefix="/api/v1")

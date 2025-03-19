@@ -6,7 +6,6 @@ from src.use_cases.insurance.calculate_policy_limit import CalculatePolicyLimitU
 
 
 def test_it_should_be_possible_to_calculate_the_policy_limit() -> None:
-    """."""
     insurance_repository = IInsuranceRepository()
     sut = CalculatePolicyLimitUseCase(insurance_repository)
 

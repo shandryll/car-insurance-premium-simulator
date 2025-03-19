@@ -6,7 +6,6 @@ from src.use_cases.insurance.calculate_premium import CalculatePremiumUseCase
 
 
 def test_it_should_be_possible_to_calculate_the_premium() -> None:
-    """."""
     insurance_repository = IInsuranceRepository()
     sut = CalculatePremiumUseCase(insurance_repository)
 

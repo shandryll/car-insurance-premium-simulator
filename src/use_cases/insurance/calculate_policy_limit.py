@@ -7,5 +7,4 @@ class CalculatePolicyLimitUseCase:
         self.__insurance_repository = insurance_repository
 
     def execute(self, data: InsuranceInputDTO) -> float:
-        """."""
         return self.__insurance_repository.calculate_policy_limit(data)

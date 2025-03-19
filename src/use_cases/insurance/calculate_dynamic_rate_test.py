@@ -6,7 +6,6 @@ from src.use_cases.insurance.calculate_dynamic_rate import CalculateDynamicRateU
 
 
 def test_it_should_be_possible_to_calculate_the_dynamic_rate() -> None:
-    """."""
     insurance_repository = IInsuranceRepository()
     sut = CalculateDynamicRateUseCase(insurance_repository)
 

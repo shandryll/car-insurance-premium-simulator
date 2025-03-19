@@ -116,75 +116,81 @@ If a **registration location** is provided, integrate with a **Geographic Inform
 ## Project Structure
 ```
 shandryll-car-insurance-premium-simulator/
-├── .env.sample                                   # Sample environment variables file
-├── .gitignore                                    # Git ignore file
-├── docker-compose.yml                            # Docker Compose configuration file
-├── Dockerfile                                    # Docker configuration file
-├── pyproject.toml                                # Python project configuration file
-├── README.md                                     # Project README file
-├── requirements.txt                              # Python dependencies file
+├── .env.sample                                           # Sample environment variables file
+├── .gitignore                                            # Git ignore file
+├── docker-compose.yml                                    # Docker Compose configuration file
+├── Dockerfile                                            # Docker configuration file
+├── pyproject.toml                                        # Python project configuration file
+├── README.md                                             # Project README file
+├── requirements.txt                                      # Python dependencies file
 
-├── .vscode/                                      # VS Code configuration folder
-│   ├── settings.json                             # VS Code settings
+├── .vscode/                                              # VS Code configuration folder
+│   ├── settings.json                                     # VS Code settings
 
-├── src/                                          # Source code folder
-│   ├── __init__.py                               # Package initializer
-│   ├── config.py                                 # Configuration settings
-│   ├── main.py                                   # Main application entry point
-│   ├── server.py                                 # Server setup
+├── src/                                                  # Source code folder
+│   ├── __init__.py                                       # Package initializer
+│   ├── config.py                                         # Configuration settings
+│   ├── main.py                                           # Main application entry point
+│   ├── server.py                                         # Server setup
 
-│   ├── api/                                      # API related code
-│   │   ├── __init__.py                           # Package initializer
+│   ├── application/                                      # Application layer
+│   │   ├── __init__.py                                   # Package initializer
 
-│   │   ├── controllers/                          # API controllers
-│   │   │   ├── __init__.py                       # Package initializer
+│   │   ├── dto/                                          # Data Transfer Objects
+│   │   │   ├── __init__.py                               # Package initializer
+│   │   │   ├── insurance_dto.py                          # DTO for insurance
 
-│   │   │   ├── insurance/                        # Insurance related controllers
-│   │   │   │   ├── __init__.py                   # Package initializer
-│   │   │   │   ├── calculate.py                  # Insurance calculation logic
-│   │   │   │   ├── routes.py                     # API routes for insurance
+│   │   ├── services/                                     # Service layer
+│   │   │   ├── __init__.py                               # Package initializer
+│   │   │   ├── config_check.py                           # Configuration check service
+│   │   │   ├── health_check.py                           # Health check service
 
-│   ├── dto/                                      # Data Transfer Objects
-│   │   ├── __init__.py                           # Package initializer
-│   │   ├── insurance_dto.py                      # DTO for insurance
+│   │   ├── use_cases/                                    # Use cases
+│   │   │   ├── __init__.py                               # Package initializer
 
-│   ├── models/                                   # Data models
-│   │   ├── __init__.py                           # Package initializer
-│   │   ├── address.py                            # Address model
-│   │   ├── car.py                                # Car model
+│   │   │   ├── factories/                                # Factories for creating use cases
+│   │   │   │   ├── __init__.py                           # Package initializer
+│   │   │   │   ├── make_calculate_dynamic_rate.py        # Factory for dynamic rate calculation
+│   │   │   │   ├── make_calculate_policy_limit.py        # Factory for policy limit calculation
+│   │   │   │   ├── make_calculate_premium.py             # Factory for premium calculation
 
-│   ├── repositories/                             # Data repositories
-│   │   ├── __init__.py                           # Package initializer
+│   │   │   ├── insurance/                                # Insurance related use cases
+│   │   │   │   ├── __init__.py                           # Package initializer
+│   │   │   │   ├── calculate_dynamic_rate.py             # Use case for dynamic rate calculation
+│   │   │   │   ├── calculate_dynamic_rate_test.py        # Tests for dynamic rate calculation
+│   │   │   │   ├── calculate_policy_limit.py             # Use case for policy limit calculation
+│   │   │   │   ├── calculate_policy_limit_test.py        # Tests for policy limit calculation
+│   │   │   │   ├── calculate_premium.py                  # Use case for premium calculation
+│   │   │   │   ├── calculate_premium_test.py             # Tests for premium calculation
 
-│   │   ├── insurance/                            # Insurance related repositories
-│   │   │   ├── __init__.py                       # Package initializer
-│   │   │   ├── insurance_base_repository.py      # Base repository for insurance
-│   │   │   ├── insurance_repository.py           # Insurance repository
+│   ├── domain/                                           # Domain layer
+│   │   ├── __init__.py                                   # Package initializer
 
-│   ├── services/                                 # Service layer
-│   │   ├── __init__.py                           # Package initializer
-│   │   ├── config_check.py                       # Configuration check service
-│   │   ├── health_check.py                       # Health check service
+│   │   ├── entities/                                     # Data entities
+│   │   │   ├── __init__.py                               # Package initializer
+│   │   │   ├── address.py                                # Address model
+│   │   │   ├── car.py                                    # Car model
 
-│   ├── use_cases/                                # Use cases
-│   │   ├── __init__.py                           # Package initializer
+│   │   ├── repositories/                                 # Data repositories
+│   │   │   ├── __init__.py                               # Package initializer
+│   │   │   ├── insurance_repository.py                   # Insurance domain repository
 
-│   │   ├── factories/                            # Factories for creating use cases
-│   │   │   ├── __init__.py                       # Package initializer
-│   │   │   ├── make_calculate_dynamic_rate.py    # Factory for dynamic rate calculation
-│   │   │   ├── make_calculate_policy_limit.py    # Factory for policy limit calculation
-│   │   │   ├── make_calculate_premium.py         # Factory for premium calculation
+│   ├── infrastructure/                                   # Infrasctruture layer
+│   │   ├── __init__.py                                   # Package initializer
 
-│   │   ├── insurance/                            # Insurance related use cases
-│   │   │   ├── __init__.py                       # Package initializer
-│   │   │   ├── calculate_dynamic_rate.py         # Use case for dynamic rate calculation
-│   │   │   ├── calculate_dynamic_rate_test.py    # Tests for dynamic rate calculation
-│   │   │   ├── calculate_policy_limit.py         # Use case for policy limit calculation
-│   │   │   ├── calculate_policy_limit_test.py    # Tests for policy limit calculation
-│   │   │   ├── calculate_premium.py              # Use case for premium calculation
-│   │   │   ├── calculate_premium_test.py         # Tests for premium calculation
+│   │   │   ├── controllers/                              # Infrastructure controllers
+│   │   │   │   ├── __init__.py                           # Package initializer
 
-│   ├── utils/                                    # Utilities folder
-│   │   ├── __init__.py                           # Package initializer
-│   │   ├── handler.py                            # Monetary value handler
+│   │   │   │   ├── insurance/                            # Insurance related controllers
+│   │   │   │   │   ├── __init__.py                       # Package initializer
+│   │   │   │   │   ├── calculate.py                      # Insurance calculation logic
+│   │   │   │   │   ├── routes.py                         # API routes for insurance
+
+│   │   │   │   ├── repositories/                         # Data repositories
+│   │   │   │   │   ├── __init__.py                       # Package initializer
+│   │   │   │   │   ├── insurance_repository.py           # Insurance infrasctruture repository
+
+│   ├── utils/                                            # Utilities folder
+│   │   ├── __init__.py                                   # Package initializer
+│   │   ├── handler.py                                    # Monetary value handler
 ```

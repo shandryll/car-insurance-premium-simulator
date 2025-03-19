@@ -186,9 +186,9 @@ shandryll-car-insurance-premium-simulator/
 │   │   │   │   │   ├── calculate.py                      # Insurance calculation logic
 │   │   │   │   │   ├── routes.py                         # API routes for insurance
 
-│   │   │   │   ├── repositories/                         # Data repositories
-│   │   │   │   │   ├── __init__.py                       # Package initializer
-│   │   │   │   │   ├── insurance_repository.py           # Insurance infrasctruture repository
+│   │   │   ├── repositories/                             # Data repositories
+│   │   │   │   ├── __init__.py                           # Package initializer
+│   │   │   │   ├── insurance_repository.py               # Insurance infrasctruture repository
 
 │   ├── utils/                                            # Utilities folder
 │   │   ├── __init__.py                                   # Package initializer

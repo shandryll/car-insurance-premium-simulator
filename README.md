@@ -1,7 +1,5 @@
 # Car Insurance Premium Simulator
 
----
-
 ## Installation
 
 To perform the installation, you must have docker installed on your machine.

@@ -185,4 +185,8 @@ shandryll-car-insurance-premium-simulator/
 │   │   │   ├── calculate_policy_limit_test.py    # Tests for policy limit calculation
 │   │   │   ├── calculate_premium.py              # Use case for premium calculation
 │   │   │   ├── calculate_premium_test.py         # Tests for premium calculation
+
+│   ├── utils/                                    # Utilities folder
+│   │   ├── __init__.py                           # Package initializer
+│   │   ├── handler.py                            # Monetary value handler
 ```

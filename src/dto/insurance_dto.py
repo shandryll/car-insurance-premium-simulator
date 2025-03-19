@@ -1,4 +1,3 @@
-from decimal import Decimal
 from typing import Optional
 
 from pydantic import BaseModel, Field
@@ -17,6 +16,6 @@ class InsuranceInputDTO(BaseModel):
 class InsuranceOutputDTO(BaseModel):
     car: ICar = Field(..., description="Details of the car associated with the insurance.")
     applied_rate: float = Field(..., description="Final calculated rate after adjustments.")
-    policy_limit: Decimal = Field(..., description="Final policy limit after deductible application.")
-    calculated_premium: Decimal = Field(..., description="Final premium after deductible and broker fee adjustments.")
-    deductible_value: Decimal = Field(..., description="Monetary value calculated from the original policy limit and deductible percentage.")
+    policy_limit: float = Field(..., description="Final policy limit after deductible application.")
+    calculated_premium: float = Field(..., description="Final premium after deductible and broker fee adjustments.")
+    deductible_value: float = Field(..., description="Monetary value calculated from the original policy limit and deductible percentage.")

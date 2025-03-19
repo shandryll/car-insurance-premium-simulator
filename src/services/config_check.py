@@ -29,10 +29,10 @@ router = APIRouter()
                             "make": "Toyota",
                             "model": "Corolla",
                             "year": 2020,
-                            "value": 20000,
+                            "value": 200000.0,
                         },
                         "deductible_percentage": 0.1,
-                        "broker_fee": 500,
+                        "broker_fee": 50.0,
                         "registration_location": {
                             "street": "Main Street",
                             "number": "123",

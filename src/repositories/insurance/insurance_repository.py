@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from src.dto.insurance_dto import InsuranceInputDTO
+from src.utils.handler import monetary_handler
 
 from .insurance_base_repository import IInsuranceBaseRepository
 
@@ -29,7 +30,7 @@ class IInsuranceRepository(IInsuranceBaseRepository):
 
         base_premium = car_value * applied_rate
         deductible_discount = base_premium * deductible_percentage
-        premium = base_premium - deductible_discount + broker_fee
+        premium = monetary_handler(base_premium - deductible_discount + broker_fee)
 
         return premium
 
@@ -41,8 +42,8 @@ class IInsuranceRepository(IInsuranceBaseRepository):
         deductible_percentage = insurance_input["deductible_percentage"]
 
         base_policy_limit = car_value * coverage_percentage
-        deductible_value = base_policy_limit * deductible_percentage
-        policy_limit = base_policy_limit - deductible_value
+        deductible_value = monetary_handler(base_policy_limit * deductible_percentage)
+        policy_limit = monetary_handler(base_policy_limit - deductible_value)
 
         return {
             "policy_limit": policy_limit,

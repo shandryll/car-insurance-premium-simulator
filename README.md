@@ -2,13 +2,62 @@
 
 ---
 
-## Get Started
+## Installation
+
+To perform the installation, you must have docker installed on your machine.
+
+With docker installed on your machine, run the following commands:
+
+
+### Rename the file _.env.sample_ to _.env_
+```
+Windows (Command Prompt ou PowerShell)
+ren .env.sample .env
+
+Mac (Terminal)
+mv .env.sample .env
+```
+
+### Edit, if desired, the initial values ​​contained in the _.env_ file, these values ​​must respect the following rules:
+```
+CAR_MAKE: string
+CAR_MODEL: string
+CAR_YEAR: int
+CAR_VALUE: float
+DEDUCTIBLE_PERCENTAGE: float
+BROKER_FEE: float
+ADDRESS_STREET: string
+ADDRESS_NUMBER: string
+ADDRESS_NEIGHBORHOOD: string
+ADDRESS_CITY: string
+ADDRESS_STATE: string
+ADDRESS_COUNTRY: string
+ADDRESS_POSTAL_CODE: string
+```
+
+### Build the container of our application
+```
+docker-compose build
+```
+
+### Run the created container of our application
+```
+docker-compose up -d
+```
+
+### After running our container, the url below will be available to access the documentation of our routes
+```
+http://localhost:8000/docs
+```
+<br>
 
 ---
 
 ## Project Description
 
 As a product owner, I want a backend service that calculates car insurance premiums based on a car's age, value, deductible percentage and a broker's fee. This ensures users receive an accurate and configurable insurance premium calculation. The service must be implemented using **FastAPI**, containerized with **Docker**, and designed following **Domain-Driven Design (DDD), S.O.L.I.D., and Clean Architecture** principles. The domain model should clearly distinguish between **value objects, entities, aggregates, services, and events**.
+
+<br>
 
 ---
 
@@ -61,6 +110,8 @@ If a **registration location** is provided, integrate with a **Geographic Inform
 - `policy_limit` _(Final policy limit after deductible application)_
 - `calculated_premium` _(Final premium after deductible and broker fee adjustments)_
 - `deductible_value` _(Monetary value calculated from the original policy limit and deductible percentage)_
+
+<br>
 
 ---
 
